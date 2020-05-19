@@ -24,6 +24,9 @@ public:
 
     static void addToFile(T* a)
     {
+        //QDir d("data");
+        //if (!d.exists())
+            //d.mkdir("data");
         std::string f = "data/" + std::string(typeid(T).name()).substr(1) + ".txt";
         int len = f.length();
         char* s = new char[len];
@@ -59,7 +62,8 @@ public:
     static void import()
     {
         QDir dataDir("data");
-
+        //if (!dataDir.exists())
+           // dataDir.mkdir("data");
         std::string f = std::string(typeid(T).name()).substr(1);
         int len = f.length();
         char* s = new char[len];
@@ -81,7 +85,7 @@ public:
         QFile file("data/" + filename);
         if (!file.open(QFile::ReadOnly | QFile::Text))
         {
-            throw QException();
+            //throw QException();
         }
         QTextStream in(&file);
 
