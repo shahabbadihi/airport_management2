@@ -19,7 +19,7 @@
 int main(int argc, char *argv[])
 {    
     QDir::setCurrent("..");
-    qDebug() << QDir::currentPath();
+    //qDebug() << QDir::currentPath();
     Recorder<Pilot>::import();
     //Recorder<Pilot>::print_dataList();
     QApplication a(argc, argv);

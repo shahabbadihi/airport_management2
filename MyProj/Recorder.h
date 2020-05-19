@@ -24,9 +24,9 @@ public:
 
     static void addToFile(T* a)
     {
-        //QDir d("data");
-        //if (!d.exists())
-            //d.mkdir("data");
+        QDir d(QDir::currentPath() + "/data");
+        if (!d.exists())
+            d.mkpath(QDir::currentPath() + "/data");
         std::string f = "data/" + std::string(typeid(T).name()).substr(1) + ".txt";
         int len = f.length();
         char* s = new char[len];
@@ -61,9 +61,9 @@ public:
 
     static void import()
     {
-        QDir dataDir("data");
-        //if (!dataDir.exists())
-           // dataDir.mkdir("data");
+        QDir dataDir(QDir::currentPath() + "/data");
+        if (!dataDir.exists())
+            dataDir.mkpath(QDir::currentPath() + "/data");
         std::string f = std::string(typeid(T).name()).substr(1);
         int len = f.length();
         char* s = new char[len];
