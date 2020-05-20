@@ -14,7 +14,7 @@ private:
     QVector<Flight*> list;
 public:
 
-    QString& get_data()
+    QString get_data()
     {
         //QString data = this->
     }
